@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+    <center>
+        <h1>Bienvenid@ <span id="nombre"></span></h1><br><br>
+        <img src="https://cdn.pixabay.com/photo/2015/04/19/08/32/rose-729509_960_720.jpg" alt="">
+        <h2>QUIERO INVITARTE A NAVEGAR EN ESTA GRANDIOSA PAGINA</h2><br><br>
+        <button onclick="salir()">VOLVER AL INICIO</button>
+        <script>
+            let nombre = sessionStorage.getItem('nombre');
+            if (!nombre) {
+                location.href = "index.html";
+            }
+            document.getElementById('nombre').innerText = nombre;
+            function salir() {
+                sessionStorage.removeItem('nombre');
+                window.location.href = "index.html";
+            }
+        </script>
+    </center>
+</body>
+
+</html>
